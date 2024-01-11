@@ -1,0 +1,1 @@
+export type NodeDataType = number | string;
