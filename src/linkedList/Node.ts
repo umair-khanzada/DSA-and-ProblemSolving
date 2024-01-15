@@ -5,7 +5,7 @@ import { NodeDataType } from './types';
 
 export class Node {
     data: NodeDataType;
-    next: Node | null;
+    next: Node | null | undefined;
     constructor(data: NodeDataType) {
         this.data = data;
         this.next = null;
