@@ -33,7 +33,7 @@ export class LinkedList {
         this._size += 1;
     }
 
-    addAt(data: NodeDataType, index: number) {
+    appendAt(data: NodeDataType, index: number) {
         if(index < 0 || index > this._size) throw new Error('Index out of bound.')
         else if(index === 0) this.prepend(data);
         else if(index === this._size) this.append(data);

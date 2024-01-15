@@ -7,7 +7,7 @@ let list = new LinkedList();
 list.append('2');
 list.append('4');
 list.prepend('1');
-list.addAt('3', 2);
+list.appendAt('3', 2);
 const head = list.getHead();
 const size = list.getSize();
 console.log('size: ', size);
