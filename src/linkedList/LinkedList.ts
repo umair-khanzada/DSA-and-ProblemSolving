@@ -48,6 +48,7 @@ export class LinkedList {
             node.next = n?.next;
             // @ts-ignore
             n.next = node;
+            this._size += 1;
         }
     }
 
