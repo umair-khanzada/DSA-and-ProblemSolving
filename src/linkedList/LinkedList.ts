@@ -38,12 +38,11 @@ export class LinkedList {
         else if(index === 0) this.prepend(data);
         else if(index === this._size) this.append(data);
         else {
-            let i = 1, n = this._head;
-            let node = new Node(data);
+            let i = 1,
+            n = this._head,
+            node = new Node(data);
 
-            for(i; i < index; i++) {
-                n = n?.next;
-            }
+            for(i; i < index; i++) n = n?.next;
             
             node.next = n?.next;
             // @ts-ignore
@@ -52,12 +51,26 @@ export class LinkedList {
         }
     }
 
+    // TODO: Write a common logic to check before any operation, ie: (size of the list).
     getHead() {
-        return this._head;
+        if(this._size === 0) throw new Error('List is empty.')
+        else return this._head;
     }
 
     getTail() {
-        return this._tail;
+        if(this._size === 0) throw new Error('List is empty.')
+        else return this._tail;
+    }
+
+    getAt(index: number) {
+        if(index < 0 || index >= this._size) throw new Error('Index out of bound.')
+        else if(index === 0) return this._head;
+        else if(index === this._size - 1) return this._tail;
+        else {
+            let i = 1, n = this._head;
+            for(i; i <= index; i++) n = n?.next;
+            return n;
+        };
     }
 
     getSize() {
